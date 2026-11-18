@@ -15,7 +15,7 @@ class RadioTest {
     }
 
     @Test
-    public  void test_plus(){
+    public  void testPlus(){
         Radio radio= new Radio();
         radio.setCurrenVolume(5);
         radio.plus();
