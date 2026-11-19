@@ -23,7 +23,7 @@ public class Radio {
         if (currentStation != maxStation){
             currentStation++;
         } else {
-            currentStation = 0;
+            currentStation = minStation;
         }
     }
     public void prev(){
@@ -61,14 +61,15 @@ public class Radio {
 
     }
     public int getCurrenVolume(){
+
         return currenVolume;
     }
     public void setCurrenVolume(int currenVolume){
         if (currenVolume < minVolume){
-            return;
+            currenVolume = minVolume;
         }
         if (currenVolume > maxVolume){
-            return;
+            currenVolume = maxVolume;
         }
         this.currenVolume = currenVolume;
     }
