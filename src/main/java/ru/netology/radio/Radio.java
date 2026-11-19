@@ -8,51 +8,57 @@ public class Radio {
     private int maxVolume;
     private int minVolume;
 
-    public Radio(){
+    public Radio() {
         this.maxStation = 9;
         this.minStation = 0;
         this.maxVolume = 100;
         this.minVolume = 0;
     }
-    public Radio(int stationCount, int volumeCount){
+
+    public Radio(int stationCount, int volumeCount) {
         this.maxStation = stationCount - 1;
         this.maxVolume = volumeCount - 1;
 
     }
-    public void nex(){
-        if (currentStation != maxStation){
+
+    public void nex() {
+        if (currentStation != maxStation) {
             currentStation++;
         } else {
             currentStation = minStation;
         }
     }
-    public void prev(){
-        if (currentStation > minStation){
+
+    public void prev() {
+        if (currentStation > minStation) {
             currentStation--;
         } else {
             currentStation = maxStation;
         }
     }
-    public int getCurrentStation(){
+
+    public int getCurrentStation() {
         return currentStation;
     }
-    public void setCurrentStation(int currentStation){
-        if (currentStation < minStation){
+
+    public void setCurrentStation(int currentStation) {
+        if (currentStation < minStation) {
             return;
         }
-        if (currentStation > maxStation){
+        if (currentStation > maxStation) {
             return;
         }
         this.currentStation = currentStation;
     }
 
-    public void plus(){
-        if(currenVolume != maxVolume){
+    public void plus() {
+        if (currenVolume != maxVolume) {
             currenVolume++;
         }
     }
-    public void minus(){
-        if(currenVolume != minVolume){
+
+    public void minus() {
+        if (currenVolume != minVolume) {
             currenVolume--;
         } else {
             currenVolume = minVolume;
@@ -60,15 +66,17 @@ public class Radio {
 
 
     }
-    public int getCurrenVolume(){
+
+    public int getCurrenVolume() {
 
         return currenVolume;
     }
-    public void setCurrenVolume(int currenVolume){
-        if (currenVolume < minVolume){
+
+    public void setCurrenVolume(int currenVolume) {
+        if (currenVolume < minVolume) {
             currenVolume = minVolume;
         }
-        if (currenVolume > maxVolume){
+        if (currenVolume > maxVolume) {
             currenVolume = maxVolume;
         }
         this.currenVolume = currenVolume;
