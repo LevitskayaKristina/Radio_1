@@ -75,6 +75,14 @@ class RadioTest {
     }
 
     @Test
+    public void testPlusSize() {
+        Radio radio = new Radio();
+        radio.setCurrenVolume(100);
+        radio.plus();
+        Assertions.assertEquals(100, radio.getCurrenVolume());
+    }
+
+    @Test
     public void testMinus() {
         Radio radio = new Radio();
         radio.setCurrenVolume(5);
@@ -106,30 +114,5 @@ class RadioTest {
         Assertions.assertEquals(9, radio.getCurrentStation());
     }
 
-    @Test
-    public void testStVo() {
-        Radio radio = new Radio(20, 102);
-        radio.setCurrentStation(15);
-        radio.setCurrenVolume(5);
-        Assertions.assertEquals(15, radio.getCurrentStation());
-        Assertions.assertEquals(5, radio.getCurrenVolume());
 
-    }
-
-    @Test
-    public void shouldSetCustomLimitsViaParameterizedConstructor() {
-        Radio radio = new Radio(20, 50);
-
-        radio.setCurrentStation(19);
-        Assertions.assertEquals(19, radio.getCurrentStation());
-
-        radio.nex();
-        Assertions.assertEquals(0, radio.getCurrentStation());
-
-        radio.setCurrenVolume(49);
-        Assertions.assertEquals(49, radio.getCurrenVolume());
-
-        radio.plus();
-        Assertions.assertEquals(49, radio.getCurrenVolume());
-    }
 }

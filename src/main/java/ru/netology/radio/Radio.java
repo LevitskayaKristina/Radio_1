@@ -3,37 +3,20 @@ package ru.netology.radio;
 public class Radio {
     private int currentStation;
     private int currenVolume;
-    private int maxStation;
-    private int minStation;
-    private int maxVolume;
-    private int minVolume;
-
-    public Radio() {
-        this.maxStation = 9;
-        this.minStation = 0;
-        this.maxVolume = 100;
-        this.minVolume = 0;
-    }
-
-    public Radio(int stationCount, int volumeCount) {
-        this.maxStation = stationCount - 1;
-        this.maxVolume = volumeCount - 1;
-
-    }
 
     public void nex() {
-        if (currentStation != maxStation) {
+        if (currentStation != 9) {
             currentStation++;
         } else {
-            currentStation = minStation;
+            currentStation = 0;
         }
     }
 
     public void prev() {
-        if (currentStation > minStation) {
+        if (currentStation > 0) {
             currentStation--;
         } else {
-            currentStation = maxStation;
+            currentStation = 9;
         }
     }
 
@@ -42,26 +25,26 @@ public class Radio {
     }
 
     public void setCurrentStation(int currentStation) {
-        if (currentStation < minStation) {
+        if (currentStation < 0) {
             return;
         }
-        if (currentStation > maxStation) {
+        if (currentStation > 9) {
             return;
         }
         this.currentStation = currentStation;
     }
 
     public void plus() {
-        if (currenVolume != maxVolume) {
+        if (currenVolume != 100) {
             currenVolume++;
         }
     }
 
     public void minus() {
-        if (currenVolume != minVolume) {
+        if (currenVolume != 0) {
             currenVolume--;
         } else {
-            currenVolume = minVolume;
+            currenVolume = 0;
         }
 
 
@@ -73,11 +56,11 @@ public class Radio {
     }
 
     public void setCurrenVolume(int currenVolume) {
-        if (currenVolume < minVolume) {
-            currenVolume = minVolume;
+        if (currenVolume < 0) {
+            currenVolume = 0;
         }
-        if (currenVolume > maxVolume) {
-            currenVolume = maxVolume;
+        if (currenVolume > 100) {
+            currenVolume = 100;
         }
         this.currenVolume = currenVolume;
     }
